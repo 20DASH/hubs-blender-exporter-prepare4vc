@@ -1,9 +1,8 @@
-from bpy.props import BoolProperty
+from bpy.props import BoolProperty, FloatProperty, StringProperty
 from ..hubs_component import HubsComponent
 from ..types import Category, NodeType, PanelType
 
-
-class Billboard(HubsComponent):
+class ProxTrigAudio(HubsComponent):
     _definition = {
         'name': 'proxtrig-audio',
         'display_name': 'Proximity Audio Trigger',
@@ -23,5 +22,23 @@ class Billboard(HubsComponent):
         default=4.0,
         min=0.0)
 
+    minDist: FloatProperty(
+        name="Minimum Distance",
+        default=0.0,
+        min=0.0)
+
     shouldReset: BoolProperty(
         name="Should File Reset", description="Reset file each time the play distance is entered", default=False)
+    
+    # sequential: BoolProperty(
+    #     name="Sequential", description="Is this part of a sequence", default=False)
+    
+    # track: StringProperty(
+    #     name="Track",
+    #     description="Name of track")
+
+    # position: FloatProperty(
+    #     name="Track Position",
+    #     default=0.0,
+    #     min=0.0)
+        
